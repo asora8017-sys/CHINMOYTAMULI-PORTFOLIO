@@ -363,9 +363,11 @@
       <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll left">❮</button>
       <div class="grid" id="projectScroller">
 
+        <!-- SMART IMAGES: tries images/folder/file first, then flat file, then fallback -->
+
         <article class="card">
           <div class="thumb">
-            <img src="images/KundliTime/KundliTime.png" alt="KundliTime" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/KundliTime/KundliTime.png" alt="KundliTime" data-fallback="KundliTime.png" onerror="smartImg(this);">
             <div class="fallback">KundliTime</div>
           </div>
           <div class="card-body">
@@ -378,7 +380,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/lersh/lersh.png" alt="Lersh" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/lersh/lersh.png" alt="Lersh" data-fallback="lersh.png" onerror="smartImg(this);">
             <div class="fallback">Lersh</div>
           </div>
           <div class="card-body">
@@ -391,7 +393,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/pareekroadlines/pareekroadlines.png" alt="Pareek Roadlines" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/pareekroadlines/pareekroadlines.png" alt="Pareek Roadlines" data-fallback="pareekroadlines.png" onerror="smartImg(this);">
             <div class="fallback">Pareek Roadlines</div>
           </div>
           <div class="card-body">
@@ -404,7 +406,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/phrenlife/phrenlife.png" alt="Phrenlife" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/phrenlife/phrenlife.png" alt="Phrenlife" data-fallback="phrenlife.png" onerror="smartImg(this);">
             <div class="fallback">Phrenlife</div>
           </div>
           <div class="card-body">
@@ -417,7 +419,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/aavashyak/aavashyak.png" alt="Aavashyak" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/aavashyak/aavashyak.png" alt="Aavashyak" data-fallback="aavashyak.png" onerror="smartImg(this);">
             <div class="fallback">Aavashyak</div>
           </div>
           <div class="card-body">
@@ -430,7 +432,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/destinyyoudreamed/destinyyoudreamed.png" alt="Destiny You Dreamed" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/destinyyoudreamed/destinyyoudreamed.png" alt="Destiny You Dreamed" data-fallback="destinyyoudreamed.png" onerror="smartImg(this);">
             <div class="fallback">Destiny You Dreamed</div>
           </div>
           <div class="card-body">
@@ -443,7 +445,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/ecoqual/ecoequal.png" alt="Ecoqual" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/ecoqual/ecoequal.png" alt="Ecoqual" data-fallback="ecoequal.png" onerror="smartImg(this);">
             <div class="fallback">Ecoqual</div>
           </div>
           <div class="card-body">
@@ -456,7 +458,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/Graceful%20Journey/Graceful%20Journey.png" alt="Graceful Journey" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/Graceful Journey/Graceful Journey.png" alt="Graceful Journey" data-fallback="Graceful Journey.png" onerror="smartImg(this);">
             <div class="fallback">Graceful Journey</div>
           </div>
           <div class="card-body">
@@ -469,7 +471,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="images/highlandtravels/highlandtravels.png" alt="Highland Travels" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <img src="images/highlandtravels/highlandtravels.png" alt="Highland Travels" data-fallback="highlandtravels.png" onerror="smartImg(this);">
             <div class="fallback">Highland Travels</div>
           </div>
           <div class="card-body">
@@ -623,7 +625,7 @@
       <div>
         <div class="profile-pic-wrapper">
           <img src="images/myphoto/myphoto.jpg" alt="Chinmoy Tamuli" class="profile-pic"
-            onerror="this.parentElement.innerHTML='<div style=&quot;width:230px;height:290px;border-radius:16px;background:linear-gradient(135deg,rgba(77,124,254,.3),rgba(124,92,255,.3));display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:800;color:#a8c0ff;font-size:1.1rem;text-align:center;padding:20px;letter-spacing:.02em;&quot;>CHINMOY TAMULI</div>';">
+            data-fallback="myphoto.jpg" onerror="smartImgProfile(this);">
         </div>
 
         <div class="quick-info">
@@ -665,7 +667,36 @@
 </footer>
 
 <script>
+  // SMART IMAGE LOADER
+  // Tries multiple paths automatically:
+  // 1) images/folder/file.png (works on PC)
+  // 2) file.png (works on GitHub flat structure)
+  // 3) gradient placeholder if both fail
+  function smartImg(img){
+    var fallback = img.getAttribute('data-fallback');
+    if(fallback && !img.dataset.triedFallback){
+      img.dataset.triedFallback = '1';
+      img.src = fallback;
+      return;
+    }
+    // Both failed — show placeholder
+    img.style.display = 'none';
+    var fb = img.parentElement.querySelector('.fallback');
+    if(fb) fb.style.display = 'flex';
+  }
+  function smartImgProfile(img){
+    var fallback = img.getAttribute('data-fallback');
+    if(fallback && !img.dataset.triedFallback){
+      img.dataset.triedFallback = '1';
+      img.src = fallback;
+      return;
+    }
+    // Both failed — show gradient placeholder
+    img.parentElement.innerHTML = '<div style="width:230px;height:290px;border-radius:16px;background:linear-gradient(135deg,rgba(77,124,254,.3),rgba(124,92,255,.3));display:flex;align-items:center;justify-content:center;font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:800;color:#a8c0ff;font-size:1.1rem;text-align:center;padding:20px;letter-spacing:.02em;">CHINMOY TAMULI</div>';
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
+    // Scroll arrows
     const scroller = document.getElementById('projectScroller');
     const leftBtn = document.getElementById('scrollLeft');
     const rightBtn = document.getElementById('scrollRight');
@@ -676,6 +707,7 @@
       rightBtn.addEventListener('click', () => scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
     }
 
+    // Mobile menu
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if(menuToggle && mobileMenu){
@@ -691,11 +723,10 @@
       });
     }
 
+    // On page load, check for already-broken images
     document.querySelectorAll('.thumb img').forEach(img => {
       if(img.complete && img.naturalWidth === 0){
-        img.remove();
-        const fb = img.parentElement.querySelector('.fallback');
-        if(fb) fb.style.display = 'flex';
+        smartImg(img);
       }
     });
   });
