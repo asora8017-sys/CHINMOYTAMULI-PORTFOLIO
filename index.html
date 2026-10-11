@@ -160,10 +160,10 @@
     justify-content:center;flex-direction:column;gap:10px;
     background:linear-gradient(135deg,rgba(77,124,254,.2),rgba(124,92,255,.2));
     color:#a8c0ff;font-family:'Plus Jakarta Sans',sans-serif;
-    font-weight:800;font-size:1.1rem;letter-spacing:.02em;text-align:center;
+    font-weight:800;font-size:1.05rem;letter-spacing:.04em;text-align:center;
     padding:20px;text-transform:uppercase}
   .thumb .fallback::before{content:'';width:38px;height:38px;
-    background:var(--gradient);border-radius:50%;opacity:.5;
+    background:var(--gradient);border-radius:50%;opacity:.6;
     box-shadow:0 0 30px var(--accent-glow)}
 
   .card-body{padding:22px;display:flex;flex-direction:column;flex:1}
@@ -623,7 +623,7 @@
       <div>
         <div class="profile-pic-wrapper">
           <img src="images/myphoto/myphoto.jpg" alt="Chinmoy Tamuli" class="profile-pic"
-            onerror="this.parentElement.innerHTML='<div style=&quot;width:230px;height:290px;border-radius:16px;background:linear-gradient(135deg,rgba(77,124,254,.3),rgba(124,92,255,.3));display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:800;color:#a8c0ff;font-size:1.1rem;text-align:center;padding:20px;&quot;>CHINMOY TAMULI</div>';">
+            onerror="this.parentElement.innerHTML='<div style=&quot;width:230px;height:290px;border-radius:16px;background:linear-gradient(135deg,rgba(77,124,254,.3),rgba(124,92,255,.3));display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:800;color:#a8c0ff;font-size:1.1rem;text-align:center;padding:20px;letter-spacing:.02em;&quot;>CHINMOY TAMULI</div>';">
         </div>
 
         <div class="quick-info">
@@ -691,13 +691,11 @@
       });
     }
 
-    // Image fallback check for images that are already broken on load
     document.querySelectorAll('.thumb img').forEach(img => {
-      if(img.complete && img.naturalWidth === 0) {
+      if(img.complete && img.naturalWidth === 0){
         img.remove();
-        if(img.nextElementSibling && img.nextElementSibling.classList.contains('fallback')) {
-          img.nextElementSibling.style.display = 'flex';
-        }
+        const fb = img.parentElement.querySelector('.fallback');
+        if(fb) fb.style.display = 'flex';
       }
     });
   });
