@@ -156,12 +156,15 @@
     transition:transform .5s cubic-bezier(.4,0,.2,1)}
   .card:hover .thumb img{transform:scale(1.06)}
 
-  .thumb .fallback{position:absolute;inset:0;display:flex;align-items:center;
-    justify-content:center;flex-direction:column;gap:8px;
-    background:linear-gradient(135deg,rgba(77,124,254,.15),rgba(124,92,255,.15));
+  .thumb .fallback{position:absolute;inset:0;display:none;align-items:center;
+    justify-content:center;flex-direction:column;gap:10px;
+    background:linear-gradient(135deg,rgba(77,124,254,.2),rgba(124,92,255,.2));
     color:#a8c0ff;font-family:'Plus Jakarta Sans',sans-serif;
-    font-weight:700;font-size:.95rem;letter-spacing:.02em;text-align:center;padding:16px}
-  .thumb .fallback::before{content:'🌐';font-size:2rem}
+    font-weight:800;font-size:1.1rem;letter-spacing:.02em;text-align:center;
+    padding:20px;text-transform:uppercase}
+  .thumb .fallback::before{content:'';width:38px;height:38px;
+    background:var(--gradient);border-radius:50%;opacity:.5;
+    box-shadow:0 0 30px var(--accent-glow)}
 
   .card-body{padding:22px;display:flex;flex-direction:column;flex:1}
   .card-body h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;
@@ -360,27 +363,23 @@
       <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll left">❮</button>
       <div class="grid" id="projectScroller">
 
-        <!-- ✅ FLAT PATHS FOR GITHUB + FALLBACK PLACEHOLDERS -->
-
         <article class="card">
           <div class="thumb">
-            <img src="KundliTime.png" alt="KundliTime" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">KundliTime</div>
+            <img src="images/KundliTime/KundliTime.png" alt="KundliTime" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">KundliTime</div>
           </div>
           <div class="card-body">
             <h3>KundliTime — AI Vedic Astrology Platform</h3>
             <p>An AI-driven astrology platform offering instant Kundli analysis, daily horoscopes, match making, and personalized guidance.</p>
-            <div class="tags">
-              <span class="tag">AI</span><span class="tag">Vedic Astrology</span><span class="tag">WordPress</span><span class="tag">Hostinger</span>
-            </div>
+            <div class="tags"><span class="tag">AI</span><span class="tag">Vedic Astrology</span><span class="tag">WordPress</span><span class="tag">Hostinger</span></div>
             <a href="https://kundlitime.com/" target="_blank" rel="noopener" class="card-link">View Live Site →</a>
           </div>
         </article>
 
         <article class="card">
           <div class="thumb">
-            <img src="lersh.png" alt="Lersh" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Lersh</div>
+            <img src="images/lersh/lersh.png" alt="Lersh" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Lersh</div>
           </div>
           <div class="card-body">
             <h3>Lersh — Business Website</h3>
@@ -392,8 +391,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="pareekroadlines.png" alt="Pareek Roadlines" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Pareek Roadlines</div>
+            <img src="images/pareekroadlines/pareekroadlines.png" alt="Pareek Roadlines" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Pareek Roadlines</div>
           </div>
           <div class="card-body">
             <h3>Pareek Roadlines — Transport & Logistics</h3>
@@ -405,8 +404,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="phrenlife.png" alt="Phrenlife" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Phrenlife</div>
+            <img src="images/phrenlife/phrenlife.png" alt="Phrenlife" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Phrenlife</div>
           </div>
           <div class="card-body">
             <h3>Phrenlife — Business Website</h3>
@@ -418,8 +417,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="aavashyak.png" alt="Aavashyak" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Aavashyak</div>
+            <img src="images/aavashyak/aavashyak.png" alt="Aavashyak" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Aavashyak</div>
           </div>
           <div class="card-body">
             <h3>Aavashyak — Daily Nutrition Brand</h3>
@@ -431,8 +430,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="destinyyoudreamed.png" alt="Destiny You Dreamed" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Destiny You Dreamed</div>
+            <img src="images/destinyyoudreamed/destinyyoudreamed.png" alt="Destiny You Dreamed" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Destiny You Dreamed</div>
           </div>
           <div class="card-body">
             <h3>Destiny You Dreamed — Travel & Tours</h3>
@@ -444,8 +443,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="ecoequal.png" alt="Ecoqual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Ecoqual</div>
+            <img src="images/ecoqual/ecoequal.png" alt="Ecoqual" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Ecoqual</div>
           </div>
           <div class="card-body">
             <h3>Ecoqual — Environmental Solutions</h3>
@@ -457,8 +456,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="Graceful%20Journey.png" alt="Graceful Journey" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Graceful Journey</div>
+            <img src="images/Graceful%20Journey/Graceful%20Journey.png" alt="Graceful Journey" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Graceful Journey</div>
           </div>
           <div class="card-body">
             <h3>Graceful Journey — Wellness & Coaching</h3>
@@ -470,8 +469,8 @@
 
         <article class="card">
           <div class="thumb">
-            <img src="highlandtravels.png" alt="Highland Travels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback" style="display:none;">Highland Travels</div>
+            <img src="images/highlandtravels/highlandtravels.png" alt="Highland Travels" onerror="this.remove();this.nextElementSibling.style.display='flex';">
+            <div class="fallback">Highland Travels</div>
           </div>
           <div class="card-body">
             <h3>Highland Travels — Himalayan Tours</h3>
@@ -623,7 +622,8 @@
       </div>
       <div>
         <div class="profile-pic-wrapper">
-          <img src="myphoto.jpg" alt="Chinmoy Tamuli" class="profile-pic" onerror="this.style.display='none';">
+          <img src="images/myphoto/myphoto.jpg" alt="Chinmoy Tamuli" class="profile-pic"
+            onerror="this.parentElement.innerHTML='<div style=&quot;width:230px;height:290px;border-radius:16px;background:linear-gradient(135deg,rgba(77,124,254,.3),rgba(124,92,255,.3));display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:800;color:#a8c0ff;font-size:1.1rem;text-align:center;padding:20px;&quot;>CHINMOY TAMULI</div>';">
         </div>
 
         <div class="quick-info">
@@ -678,7 +678,6 @@
 
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-
     if(menuToggle && mobileMenu){
       menuToggle.addEventListener('click', function() {
         mobileMenu.classList.toggle('open');
@@ -691,6 +690,16 @@
         });
       });
     }
+
+    // Image fallback check for images that are already broken on load
+    document.querySelectorAll('.thumb img').forEach(img => {
+      if(img.complete && img.naturalWidth === 0) {
+        img.remove();
+        if(img.nextElementSibling && img.nextElementSibling.classList.contains('fallback')) {
+          img.nextElementSibling.style.display = 'flex';
+        }
+      }
+    });
   });
 </script>
 
