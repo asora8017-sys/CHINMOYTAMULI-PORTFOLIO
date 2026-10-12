@@ -188,7 +188,7 @@
     align-items:center;justify-content:center;overflow:hidden;
     border-bottom:1px solid var(--border);position:relative}
   .thumb img{width:100%;height:100%;object-fit:cover;display:block;
-    transition:transform .5s cubic-bezier(.4,0,.2,1)}
+    transition:transform .5s cubic-bezier(.4,0,.2,1);background:#0b0d12}
   .card:hover .thumb img{transform:scale(1.06)}
 
   .thumb .fallback{position:absolute;inset:0;display:none;align-items:center;
@@ -406,11 +406,11 @@
       <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll left">❮</button>
       <div class="grid" id="projectScroller">
 
-        <!-- Each image tries: local path → flat file → LIVE auto-screenshot → gradient fallback -->
+        <!-- LIVE SCREENSHOT is PRIMARY — works on every device with no upload needed -->
 
         <article class="card">
           <div class="thumb">
-            <img alt="Lersh" data-alt-srcs="images/lersh/lersh.png|lersh.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Flersh.co.in%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Lersh" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Flersh.co.in%2F?w=800&h=500|images/lersh/lersh.png|lersh.png" onerror="tryNext(this);">
             <div class="fallback">Lersh</div>
           </div>
           <div class="card-body">
@@ -423,7 +423,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Pareek Roadlines" data-alt-srcs="images/pareekroadlines/pareekroadlines.png|pareekroadlines.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpareekroadlines.in%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Pareek Roadlines" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpareekroadlines.in%2F?w=800&h=500|images/pareekroadlines/pareekroadlines.png|pareekroadlines.png" onerror="tryNext(this);">
             <div class="fallback">Pareek Roadlines</div>
           </div>
           <div class="card-body">
@@ -436,7 +436,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Phrenlife" data-alt-srcs="images/phrenlife/phrenlife.png|phrenlife.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fphrenlife.com%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Phrenlife" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fphrenlife.com%2F?w=800&h=500|images/phrenlife/phrenlife.png|phrenlife.png" onerror="tryNext(this);">
             <div class="fallback">Phrenlife</div>
           </div>
           <div class="card-body">
@@ -449,7 +449,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Aavashyak" data-alt-srcs="images/aavashyak/aavashyak.png|aavashyak.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Faavashyak.in%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Aavashyak" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Faavashyak.in%2F?w=800&h=500|images/aavashyak/aavashyak.png|aavashyak.png" onerror="tryNext(this);">
             <div class="fallback">Aavashyak</div>
           </div>
           <div class="card-body">
@@ -462,7 +462,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Destiny You Dreamed" data-alt-srcs="images/destinyyoudreamed/destinyyoudreamed.png|destinyyoudreamed.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdestinyyoudreamed.com%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Destiny You Dreamed" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdestinyyoudreamed.com%2F?w=800&h=500|images/destinyyoudreamed/destinyyoudreamed.png|destinyyoudreamed.png" onerror="tryNext(this);">
             <div class="fallback">Destiny You Dreamed</div>
           </div>
           <div class="card-body">
@@ -475,7 +475,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Ecoqual" data-alt-srcs="images/ecoqual/ecoequal.png|ecoequal.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.ecoqual.in%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Ecoqual" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.ecoqual.in%2F?w=800&h=500|images/ecoqual/ecoequal.png|ecoequal.png" onerror="tryNext(this);">
             <div class="fallback">Ecoqual</div>
           </div>
           <div class="card-body">
@@ -488,7 +488,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Graceful Journeys" data-alt-srcs="images/Graceful Journey/Graceful Journey.png|Graceful Journey.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgracefuljourneys.in%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Graceful Journeys" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgracefuljourneys.in%2F?w=800&h=500|images/Graceful%20Journey/Graceful%20Journey.png|Graceful%20Journey.png" onerror="tryNext(this);">
             <div class="fallback">Graceful Journeys</div>
           </div>
           <div class="card-body">
@@ -501,7 +501,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Highland Travels" data-alt-srcs="images/highlandtravels/highlandtravels.png|highlandtravels.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhighlandtravels.in%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Highland Travels" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhighlandtravels.in%2F?w=800&h=500|images/highlandtravels/highlandtravels.png|highlandtravels.png" onerror="tryNext(this);">
             <div class="fallback">Highland Travels</div>
           </div>
           <div class="card-body">
@@ -512,10 +512,10 @@
           </div>
         </article>
 
-        <!-- ✅ LEGAL HOUSE — Now with LIVE auto-screenshot as backup -->
+        <!-- LEGAL HOUSE — with live screenshot as primary -->
         <article class="card">
           <div class="thumb">
-            <img alt="Legal House" data-alt-srcs="images/legalhouse/legalhouse.jpg|legalhouse.jpg|images/legalhouse/legalhouse.png|legalhouse.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Flegal-house.com%2F?w=800&h=500" onerror="tryNext(this);">
+            <img alt="Legal House" data-alt-srcs="https://s.wordpress.com/mshots/v1/https%3A%2F%2Flegal-house.com%2F?w=800&h=500|images/legalhouse/legalhouse.jpg|legalhouse.jpg" onerror="tryNext(this);">
             <div class="fallback">Legal House</div>
           </div>
           <div class="card-body">
