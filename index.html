@@ -58,12 +58,9 @@
   }
   .nav-resume::before{content:'';position:absolute;inset:0;
     background:var(--gradient);opacity:.12;transition:opacity .25s}
-  .nav-resume:hover{
-    background:rgba(77,124,254,.15) !important;
-    border-color:var(--accent) !important;
-    box-shadow:0 4px 16px var(--accent-glow);
-    transform:translateY(-1px);
-  }
+  .nav-resume:hover{background:rgba(77,124,254,.15) !important;
+    border-color:var(--accent) !important;box-shadow:0 4px 16px var(--accent-glow);
+    transform:translateY(-1px)}
   .nav-resume:hover::before{opacity:.25}
   .nav-resume svg{width:14px;height:14px;position:relative;z-index:1}
   .nav-resume span{position:relative;z-index:1}
@@ -120,10 +117,8 @@
   }
   .btn-resume::before{content:'';position:absolute;inset:0;
     background:var(--gradient);opacity:.15;transition:opacity .25s}
-  .btn-resume:hover{
-    background:rgba(77,124,254,.18);border-color:var(--accent);
-    box-shadow:0 8px 24px var(--accent-glow);transform:translateY(-2px);
-  }
+  .btn-resume:hover{background:rgba(77,124,254,.18);border-color:var(--accent);
+    box-shadow:0 8px 24px var(--accent-glow);transform:translateY(-2px)}
   .btn-resume:hover::before{opacity:.3}
   .btn-resume svg{width:16px;height:16px;position:relative;z-index:1}
   .btn-resume span{position:relative;z-index:1}
@@ -411,11 +406,11 @@
       <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll left">❮</button>
       <div class="grid" id="projectScroller">
 
-        <!-- MULTI-PATH IMAGE LOADER: tries 6 paths for each image -->
+        <!-- Each image tries: local path → flat file → LIVE auto-screenshot → gradient fallback -->
 
         <article class="card">
           <div class="thumb">
-            <img alt="Lersh" data-alt-srcs="images/lersh/lersh.png|lersh.png|images/lersh/lersh.jpg|lersh.jpg|lersh.webp|images/lersh/lersh.webp" onerror="tryNext(this);">
+            <img alt="Lersh" data-alt-srcs="images/lersh/lersh.png|lersh.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Flersh.co.in%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Lersh</div>
           </div>
           <div class="card-body">
@@ -428,7 +423,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Pareek Roadlines" data-alt-srcs="images/pareekroadlines/pareekroadlines.png|pareekroadlines.png|images/pareekroadlines/pareekroadlines.jpg|pareekroadlines.jpg|pareekroadlines.webp|images/pareekroadlines/pareekroadlines.webp" onerror="tryNext(this);">
+            <img alt="Pareek Roadlines" data-alt-srcs="images/pareekroadlines/pareekroadlines.png|pareekroadlines.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpareekroadlines.in%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Pareek Roadlines</div>
           </div>
           <div class="card-body">
@@ -441,7 +436,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Phrenlife" data-alt-srcs="images/phrenlife/phrenlife.png|phrenlife.png|images/phrenlife/phrenlife.jpg|phrenlife.jpg|phrenlife.webp|images/phrenlife/phrenlife.webp" onerror="tryNext(this);">
+            <img alt="Phrenlife" data-alt-srcs="images/phrenlife/phrenlife.png|phrenlife.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fphrenlife.com%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Phrenlife</div>
           </div>
           <div class="card-body">
@@ -454,7 +449,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Aavashyak" data-alt-srcs="images/aavashyak/aavashyak.png|aavashyak.png|images/aavashyak/aavashyak.jpg|aavashyak.jpg|aavashyak.webp|images/aavashyak/aavashyak.webp" onerror="tryNext(this);">
+            <img alt="Aavashyak" data-alt-srcs="images/aavashyak/aavashyak.png|aavashyak.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Faavashyak.in%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Aavashyak</div>
           </div>
           <div class="card-body">
@@ -467,7 +462,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Destiny You Dreamed" data-alt-srcs="images/destinyyoudreamed/destinyyoudreamed.png|destinyyoudreamed.png|images/destinyyoudreamed/destinyyoudreamed.jpg|destinyyoudreamed.jpg|destinyyoudreamed.webp|images/destinyyoudreamed/destinyyoudreamed.webp" onerror="tryNext(this);">
+            <img alt="Destiny You Dreamed" data-alt-srcs="images/destinyyoudreamed/destinyyoudreamed.png|destinyyoudreamed.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdestinyyoudreamed.com%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Destiny You Dreamed</div>
           </div>
           <div class="card-body">
@@ -480,7 +475,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Ecoqual" data-alt-srcs="images/ecoqual/ecoequal.png|ecoequal.png|images/ecoqual/ecoequal.jpg|ecoequal.jpg|ecoequal.webp|images/ecoqual/ecoequal.webp" onerror="tryNext(this);">
+            <img alt="Ecoqual" data-alt-srcs="images/ecoqual/ecoequal.png|ecoequal.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.ecoqual.in%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Ecoqual</div>
           </div>
           <div class="card-body">
@@ -493,7 +488,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Graceful Journeys" data-alt-srcs="images/Graceful Journey/Graceful Journey.png|Graceful Journey.png|images/Graceful Journey/Graceful Journey.jpg|Graceful Journey.jpg|images/Graceful%20Journey/Graceful%20Journey.png|Graceful%20Journey.png" onerror="tryNext(this);">
+            <img alt="Graceful Journeys" data-alt-srcs="images/Graceful Journey/Graceful Journey.png|Graceful Journey.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgracefuljourneys.in%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Graceful Journeys</div>
           </div>
           <div class="card-body">
@@ -506,7 +501,7 @@
 
         <article class="card">
           <div class="thumb">
-            <img alt="Highland Travels" data-alt-srcs="images/highlandtravels/highlandtravels.png|highlandtravels.png|images/highlandtravels/highlandtravels.jpg|highlandtravels.jpg|highlandtravels.webp|images/highlandtravels/highlandtravels.webp" onerror="tryNext(this);">
+            <img alt="Highland Travels" data-alt-srcs="images/highlandtravels/highlandtravels.png|highlandtravels.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhighlandtravels.in%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Highland Travels</div>
           </div>
           <div class="card-body">
@@ -517,10 +512,10 @@
           </div>
         </article>
 
-        <!-- ✅ LEGAL HOUSE — with maximum fallback paths -->
+        <!-- ✅ LEGAL HOUSE — Now with LIVE auto-screenshot as backup -->
         <article class="card">
           <div class="thumb">
-            <img alt="Legal House" data-alt-srcs="images/legalhouse/legalhouse.jpg|legalhouse.jpg|images/legalhouse/legalhouse.png|legalhouse.png|images/legal-house/legal-house.jpg|legal-house.jpg|images/legalhouse/legalhouse.jpeg|legalhouse.jpeg|images/Legal House/Legal House.jpg|Legal House.jpg" onerror="tryNext(this);">
+            <img alt="Legal House" data-alt-srcs="images/legalhouse/legalhouse.jpg|legalhouse.jpg|images/legalhouse/legalhouse.png|legalhouse.png|https://s.wordpress.com/mshots/v1/https%3A%2F%2Flegal-house.com%2F?w=800&h=500" onerror="tryNext(this);">
             <div class="fallback">Legal House</div>
           </div>
           <div class="card-body">
@@ -673,7 +668,7 @@
       </div>
       <div>
         <div class="profile-pic-wrapper">
-          <img alt="Chinmoy Tamuli" class="profile-pic" data-alt-srcs="images/myphoto/myphoto.jpg|myphoto.jpg|images/myphoto/myphoto.png|myphoto.png|images/myphoto/myphoto.jpeg|myphoto.jpeg" onerror="tryNextProfile(this);">
+          <img alt="Chinmoy Tamuli" class="profile-pic" data-alt-srcs="images/myphoto/myphoto.jpg|myphoto.jpg|images/myphoto/myphoto.png|myphoto.png" onerror="tryNextProfile(this);">
         </div>
 
         <div class="quick-info">
@@ -719,10 +714,6 @@
 </footer>
 
 <script>
-  // MULTI-PATH IMAGE LOADER
-  // Each image has data-alt-srcs with multiple paths (separated by |)
-  // It tries each path until one works. If all fail, shows the fallback gradient.
-
   function tryNext(img){
     var paths = (img.getAttribute('data-alt-srcs') || '').split('|').filter(Boolean);
     var currentIndex = parseInt(img.dataset.pathIndex || '0', 10);
@@ -731,7 +722,6 @@
       img.dataset.pathIndex = currentIndex + 1;
       img.src = paths[currentIndex];
     } else {
-      // All paths failed — show fallback
       img.style.display = 'none';
       var fb = img.parentElement.querySelector('.fallback');
       if(fb) fb.style.display = 'flex';
@@ -746,12 +736,10 @@
       img.dataset.pathIndex = currentIndex + 1;
       img.src = paths[currentIndex];
     } else {
-      // All paths failed — show gradient placeholder
       img.parentElement.innerHTML = '<div style="width:230px;height:290px;border-radius:16px;background:linear-gradient(135deg,rgba(77,124,254,.3),rgba(124,92,255,.3));display:flex;align-items:center;justify-content:center;font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:800;color:#a8c0ff;font-size:1.1rem;text-align:center;padding:20px;letter-spacing:.02em;">CHINMOY TAMULI</div>';
     }
   }
 
-  // Trigger the loader for every image with data-alt-srcs
   function loadAllImages(){
     document.querySelectorAll('img[data-alt-srcs]').forEach(function(img){
       if(!img.dataset.pathIndex){
@@ -762,10 +750,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    // Start loading all images
     loadAllImages();
 
-    // Scroll arrows
     const scroller = document.getElementById('projectScroller');
     const leftBtn = document.getElementById('scrollLeft');
     const rightBtn = document.getElementById('scrollRight');
@@ -776,7 +762,6 @@
       rightBtn.addEventListener('click', () => scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
     }
 
-    // Mobile menu
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if(menuToggle && mobileMenu){
